@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet"  href="{%  static  'css/style.css'  %}">
+    <title>Title</title>
+</head>
+<body>
+<h1 class="header">UW-Milwaukee TA Scheduling Application- Assign Course</h1>
+<form action="/home/assignCourse/" class="entirePage" method="post">
+    {%csrf_token%}
+    <div class="createBoxLong">
+        <div class="createInnerBox">
+            <div class="actionTitle">Assign Course</div>
+            <div class="createEntriesLong">
+                <div class="creationInfo courseAssignInfo">
+                    <div class="entryOption">
+                        <div class="entryKey">Course name: </div>
+                        <div class="entryValue">
+                            <select name="courseID">
+                                {% for course in course_list %}
+                                    <option value="{{ course.name }}">{{ course.name }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="entryOption">
+                        <div class="entryKey">Assignee name: </div>
+                        <div class="entryValue">
+                            <select name="userToFind">
+                                {% for user in user_list %}
+                                    <option value="{{ user.username }}">{{ user.username }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <input type="submit" value="Assign" class="creationButton">
+                <div class="errorMessage extraPadding">{{ Message }}</div>
+            </div>
+        </div>
+    </div>
+    <div class="bottomButtons">
+        <div class="homeLink"><a href="/home">Go Home</a></div>
+        <div class="homeLink"><a href="/home/createCourse">Create Course</a></div>
+    </div>
+</form>
+</body>
+</html>

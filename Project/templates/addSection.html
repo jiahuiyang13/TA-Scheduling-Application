@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet"  href="{%  static  'css/style.css'  %}">
+    <title>Title</title>
+</head>
+<body>
+<h1 class="header">UW-Milwaukee TA Scheduling Application- Add Section</h1>
+<form action="/home/addSection/" class="entirePage" method="post">
+    {%csrf_token%}
+    <div class="createDeletePage">
+        <div class="createBox">
+            <div class="createInnerBox">
+                <div class="actionTitle">Add Section</div>
+                <div class="createEntries">
+                    <div class="creationInfo">
+                        <div class="entryArea">
+                            <div class="entryOption"><div class="entryKey">Course name: </div><div class="entryValue"><input type="courseID" name="courseID"></div></div>
+                        </div>
+                        <div class="entryArea">
+                            <div class="entryOption"><div class="entryKey">Section name: </div><div class="entryValue"><input type="sectionID" name="sectionID"></div></div>
+                        </div>
+                    </div>
+                    <input type="submit" value="Add Section" class="creationButton">
+                    <div class="errorMessage extraPadding">{{ Message }}</div>
+                </div>
+            </div>
+        </div>
+        <div class="createBox">
+            <div class="createInnerBox">
+                <div class="actionTitle">Section List</div>
+                <div class="sectionCourseList">
+                    <ul>
+                        {% for section in section_list %}
+                            <li>{{ section.sectionName }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottomButtons">
+        <div class="homeLink"><a href="/home">Go Home</a></div>
+        <div class="homeLink"><a href="/home/assignSection">Assign Section</a></div>
+    </div>
+</form>
+</body>
+</html>

@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet"  href="{%  static  'css/style.css'  %}">
+    <title>Title</title>
+</head>
+<body>
+<h1 class="header">UW-Milwaukee TA Scheduling Application- View Skills</h1>
+<form action="/home/viewSkills/" class="entirePage" method="post">
+    {%csrf_token%}
+    <div class="contentBox">
+        <div class="actionTitle">Search for User to View Skills</div>
+        <div class="userSearch cdaSearch"><input class="userSearchBox" type="text" name="userToFind" placeholder="Search for user..."><input type="submit" name="searchUser" value="Search"></div>
+        <div class="errorMessage extraPadding">{{ Message }}</div>
+        <div class="actionTitle accountListTitle">User Skills</div>
+        <div class="accountList">
+            <ul>
+                {% for skill in userSkills %}
+                    <li>{{ skill.name }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div class="bottomButtons">
+        <div class="homeLink"><a href="/home">Go Home</a></div>
+    </div>
+</form>
+</body>
+</html>

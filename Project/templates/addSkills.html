@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet"  href="{%  static  'css/style.css'  %}">
+    <title>Title</title>
+</head>
+<body>
+<h1 class="header">UW-Milwaukee TA Scheduling Application- Add Skills</h1>
+<form action="/home/addSkills/" class="entirePage" method="post">
+    {%csrf_token%}
+    <div class="createDeletePage">
+        <div class="createBox">
+            <div class="createInnerBox">
+                <div class="actionTitle">Add Skills</div>
+                <div class="createEntries">
+                    <div class="creationInfo addSkill">
+                        <div class="entryOption"><div class="entryKey">Add skill: </div><div class="entryValue"><input type="newSkill" name="newSkill"></div></div>
+                    </div>
+                    <input type="submit" value="Add Skill" class="creationButton">
+                    <div class="errorMessage extraPadding">{{ Message }}</div>
+                </div>
+            </div>
+        </div>
+           <div class="createBox">
+                <div class="createInnerBox">
+                    <div class="actionTitle">My Skills</div>
+                    <div class="sectionCourseList">
+                        <ul>
+                            {% for Skill in mySkills%}
+                                <li>{{ Skill.name }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="homeLink"><a href="/home">Go Home</a></div>
+</form>
+</body>
+</html>

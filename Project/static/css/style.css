@@ -1,0 +1,347 @@
+/*shared classes*/
+:root {
+  --content-color: #7d2734;
+}
+
+.header {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-color: var(--content-color);
+    min-height: 50px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 14px;
+}
+
+.entirePage {
+    justify-content: center;
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    flex-direction: column;
+    align-items: center;
+}
+
+.homeLink {
+    background-color: var(--content-color);
+    width: 150px;
+    height: 40px;
+    border-radius: 25px;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.homeLink:hover {
+  background-color: #9e4653;
+}
+
+.bottomButtons {
+    display: flex;
+}
+
+
+.createBox {
+    background-color: var(--content-color);
+    width: 400px;
+    height: 300px;
+    display: flex;
+    padding: 20px;
+    margin-top: 60px;
+    border-radius: 25px;
+    color: white;
+}
+
+.createBoxLong {
+    background-color: var(--content-color);
+    width: 400px;
+    height: 370px;
+    display: flex;
+    padding: 20px;
+    margin-top: 60px;
+    border-radius: 25px;
+    color: white;
+}
+
+.createEntries {
+    background-color: white;
+    width: 300px;
+    height: 200px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: black;
+    flex-direction: column;
+    margin-top: 38px;
+    border-radius: 25px;
+}
+
+.createEntriesLong {
+    background-color: white;
+    width: 300px;
+    height: 270px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: black;
+    flex-direction: column;
+    margin-top: 38px;
+    border-radius: 25px;
+}
+
+.sectionCourseList {
+    background-color: white;
+    width: 300px;
+    height: 200px;
+    display: flex;
+    color: black;
+    flex-direction: column;
+    margin-top: 38px;
+    border-radius: 25px;
+}
+
+.accountListTitle {
+    padding-top: 20px;
+    align-self: center;
+}
+
+.accountList {
+    background-color: white;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    color: black;
+    flex-direction: column;
+    margin-top: 10px;
+    border-radius: 25px;
+}
+
+/*login classes*/
+
+.entryBoxTitle {
+    font-size: 16px;
+}
+
+.loginBox {
+    background-color: var(--content-color);
+    width: 300px;
+    height: 300px;
+    display: flex;
+    padding: 20px;
+    margin-top: 60px;
+    border-radius: 25px;
+    color: white;
+}
+
+.loginInfo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.errorMessage {
+    font-size: 10px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.loginInput {
+    min-height: 24px;
+}
+
+.inputBox {
+    padding: 8px 0px;
+}
+
+.loginButton {
+    padding: 8px 0px;
+}
+
+.login {
+    width: 80px;
+    min-height: 24px;
+    font-size: 16px;
+}
+
+/*home classes*/
+
+.accountInfoBox {
+    min-width: 80%;
+    background-color: var(--content-color);
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    color: white;
+    margin-top: 60px;
+    margin-bottom: 20px;
+}
+
+.accountInfo {
+    text-align: center;
+    margin-top: 8px;
+}
+
+.homepageOptions {
+    background-color: var(--content-color);
+    padding: 20px;
+    width: 235px;
+    margin: 30px;
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    justify-content: center;
+    display: flex;
+    border-radius: 25px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.homepageOptions:hover {
+  background-color: #9e4653;
+}
+
+/*createCourse classes*/
+.createInnerBox {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.actionTitle {
+    font-size: 20px;
+}
+
+.creationInfo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 26px;
+    width: 100%;
+}
+
+.entryOption {
+    display: flex;
+    padding: 10px 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.creationButton {
+    margin-bottom: 14px;
+}
+
+/*createDeleteUser classes*/
+.createDeletePage {
+    justify-content: space-evenly;
+    width: 100%;
+    display: flex;
+}
+
+.contentBox {
+    align-items: center;
+    background-color: var(--content-color);
+    width: 300px;
+    height: 300px;
+    display: flex;
+    padding: 20px;
+    margin-top: 60px;
+    border-radius: 25px;
+    color: white;
+    flex-direction: column;
+}
+
+.userSearch {
+    display: flex;
+    flex-direction: row;
+    margin-top: 24px;
+}
+
+.cdaSearch {
+    margin-top: 24px;
+}
+
+.matchingUser {
+    margin-top: 23px;
+}
+
+.matchingUserBox {
+    height: 150px;
+    width: 250px;
+    border-radius: 25px;
+    background-color: white;
+    color: black;
+    margin-top: 6px;
+}
+
+.createAccountInfo {
+    text-align: center;
+    margin-top: 62px;
+}
+
+.createAccountButton {
+    margin-top: 42px;
+}
+
+.entryKey, .userSearchBox {
+    margin-right: 4px;
+}
+
+.assigneeBox {
+    width: 103px;
+}
+
+.entryDropdown {
+    padding: 2px;
+    margin-right: 64px;
+}
+
+.usernameDelete {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    height: 100%;
+    justify-content: space-evenly;
+}
+
+.extraPadding {
+    margin-bottom: 6px;
+}
+
+.linkContainer {
+    width: 100%;
+    width: 900px;
+    justify-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+}
+
+/*Assign course*/
+.assigneeSkills {
+    padding: 0px 20px;
+    font-size: 14px;
+    display: flex;
+    font-style: italic;
+    flex-direction: row;
+}
+
+.courseAssignInfo {
+    margin-bottom: 42px;
+}
+
+/*Add skills*/
+.addSkill {
+    margin-bottom: 46px;
+}

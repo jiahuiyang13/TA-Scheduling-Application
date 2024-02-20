@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet"  href="{%  static  'css/style.css'  %}">
+    <title>Title</title>
+</head>
+<body>
+<h1 class="header">UW-Milwaukee TA Scheduling Application- Home Page</h1>
+<form action="/home/" class="entirePage" method="post">
+    {%csrf_token%}
+    <div class="accountInfoBox">
+        <div>Account Info:</div>
+        <div accountInfo>Name: {{name}}, Username: {{username}}, Password: {{password}}, {{phone}}, {{email}}, {{address}}</div>
+    </div>
+{#    TODO: Add ifs to only display links if user has the correct type#}
+    <div class="linkContainer">
+        <div class="homepageOptions">
+            <a href="/home/createCourse">Create Course</a>
+        </div>
+        <div class="homepageOptions">
+            <a href="/home/addSection">Add Section</a>
+        </div>
+        <div class="homepageOptions">
+            <a href="/home/createDeleteAccount">Create/Delete Accounts</a>
+        </div>
+        <div class="homepageOptions">
+            <a href="/home/accountEdit">Edit My Info</a>
+        </div>
+        <div class="homepageOptions">
+            <a href="/home/assignSection">Assign Section</a>
+        </div>
+        <div class="homepageOptions">
+            <a href="/home/assignCourse">Assign Course</a>
+        </div>
+        <div class="homepageOptions">
+            <a href="/home/addSkills">Add Skills</a>
+        </div>
+        <div class="homepageOptions">
+            <a href="/home/viewSkills">View Skills</a>
+        </div>
+    </div>
+</form>
+</body>
+</html>

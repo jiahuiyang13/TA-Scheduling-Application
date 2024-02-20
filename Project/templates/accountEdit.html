@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet"  href="{%  static  'css/style.css'  %}">
+    <title>Title</title>
+</head>
+<body>
+<h1 class="header">UW-Milwaukee TA Scheduling Application- Edit My Info</h1>
+<form action="/home/accountEdit/" class="entirePage" method="post">
+    {%csrf_token%}
+    <div class="createBox">
+        <div class="createInnerBox">
+            <div class="actionTitle">Account Edit</div>
+            <div class="createEntries">
+                <div class="creationInfo">
+                    <div class="entryArea">
+                        <div class="entryOption">
+                            <div class="entryKey"><label for="dog-names">Field to change: </label></div>
+                            <select class="entryDropdown" name="user-fields" id="user-fields">
+                                <option value="phone">phone</option>
+                                <option value="name">name</option>
+                                <option value="email">email</option>
+                                <option value="address">address</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="entryArea">
+                        <div class="entryOption"><div class="entryKey">Change to: </div><div class="entryValue"><input type="newEntry" name="newEntry"></div></div>
+                    </div>
+                </div>
+                <input type="submit" value="Save Changes" class="creationButton">
+                <div class="errorMessage extraPadding">{{ Message }}</div>
+            </div>
+        </div>
+    </div>
+    <div class="homeLink"><a href="/home">Go Home</a></div>
+</form>
+</body>
+</html>

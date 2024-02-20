@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet"  href="{%  static  'css/style.css'  %}">
+    <title>Title</title>
+</head>
+<body>
+<h1 class="header">UW-Milwaukee TA Scheduling Application- Create, Delete Account</h1>
+<form action="/home/createDeleteAccount/" class="entirePage" method="post">
+    {%csrf_token%}
+    <div class="createDeletePage">
+        <div class="contentBox">
+            <div class="actionTitle">Create</div>
+            <div class="createAccountInfo">
+                <div class="entryOption"><div class="entryKey">Username</div><div class="entryValue"><input type="username" name="username"></div></div>
+                <div class="entryOption"><div class="entryKey">Password</div><div class="entryValue"><input type="password" name="password"></div></div>
+                <div class="entryOption"><div class="entryKey">Email</div><div class="entryValue"><input type="email" name="email"></div></div>
+            </div>
+            <input type="submit" name="createAccount" value="Create Account" class="createAccountButton">
+
+        </div>
+
+        <div class="contentBox">
+            <div class="actionTitle">Delete</div>
+            <div class="userSearch cdaSearch"><input class="userSearchBox" type="text" name="userToFind" placeholder="Search for user to delete..."><input type="submit" name="searchUser" value="Delete"></div>
+            <div class="actionTitle accountListTitle">Account List</div>
+            <div class="accountList">
+                <ul>
+                    {% for user in accounts %}
+                        <li>{{ user.username }} ({{ user.email }})</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <div class="homeLink"><a href="/home">Go Home</a></div>
+</form>
+</body>
+</html>
